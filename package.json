@@ -1,7 +1,7 @@
 {
   "name": "@christianpasinrey/vue3-debug-data",
   "version": "1.0.0",
-  "description": "Plugin de depuración visual para Vue 3.",
+  "description": "Visual debugging plugin for Vue 3.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -17,9 +17,11 @@
     "vue3",
     "debug",
     "plugin",
-    "typescript"
+    "typescript",
+    "visual debugging",
+    "vue plugin"
   ],
-  "author": "Christian Pasinrey",
+  "author": "Christian Pasin Rey",
   "license": "MIT",
   "peerDependencies": {
     "vue": ">=3.0.0"

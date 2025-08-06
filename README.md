@@ -1,23 +1,24 @@
+
 # @christianpasinrey/vue3-debug-data
 
-> Un plugin de depuración visual para Vue 3, ideal para desarrollo y debugging de datos en tiempo real.
+> A visual debugging plugin for Vue 3, ideal for real-time data development and debugging.
 
-## Características
-- Visualización elegante y colapsable de cualquier objeto o array.
-- Componente global `<Debug />` para mostrar datos en cualquier parte de tu app.
-- Composable `useDebug` para emitir datos desde cualquier lugar.
-- Configuración sencilla del nombre del evento.
-- 100% TypeScript y fácil de integrar.
+## Features
+- Elegant and collapsible visualization of any object or array.
+- Global `<Debug />` component to display data anywhere in your app.
+- `useDebug` composable to emit debug data from anywhere.
+- Easy event name configuration.
+- 100% TypeScript and easy to integrate.
 
-## Instalación
+## Installation
 
 ```bash
 npm install @christianpasinrey/vue3-debug-data
 ```
 
-## Uso Básico
+## Basic Usage
 
-### 1. Registro del plugin en tu app Vue 3
+### 1. Register the plugin in your Vue 3 app
 
 ```typescript
 import { createApp } from 'vue';
@@ -25,31 +26,31 @@ import App from './App.vue';
 import { DebugPlugin } from '@christianpasinrey/vue3-debug-data';
 
 const app = createApp(App);
-app.use(DebugPlugin); // Puedes pasar opciones si lo deseas
+app.use(DebugPlugin); // You can pass options if you want
 app.mount('#app');
 ```
 
-### 2. Mostrar el componente en tu layout
+### 2. Show the component in your layout
 
 ```vue
 <template>
   <Debug />
-  <!-- ...el resto de tu app... -->
+  <!-- ...the rest of your app... -->
 </template>
 ```
 
-### 3. Emitir datos desde cualquier parte
+### 3. Emit data from anywhere
 
 ```typescript
 import { useDebug } from '@christianpasinrey/vue3-debug-data';
 
-// En cualquier función, setup o composable:
-useDebug({ foo: 'bar', usuario: { nombre: 'Ana' } });
+// In any function, setup, or composable:
+useDebug({ foo: 'bar', user: { name: 'Ana' } });
 ```
 
-## Configuración avanzada
+## Advanced Configuration
 
-Puedes cambiar el nombre del evento de debug:
+You can change the debug event name:
 
 ```typescript
 app.use(DebugPlugin, { eventName: 'my-debug-event' });
@@ -58,15 +59,15 @@ app.use(DebugPlugin, { eventName: 'my-debug-event' });
 ## API
 
 ### `<Debug />`
-Componente global para visualizar los datos emitidos.
+Global component to visualize emitted data.
 
 ### `useDebug(data: any)`
-Composable para emitir datos de debug.
+Composable to emit debug data.
 
-### Opciones del plugin
-- `eventName` _(string)_: Nombre del evento personalizado para escuchar y emitir datos.
+### Plugin options
+- `eventName` _(string)_: Custom event name to listen and emit data.
 
-## Ejemplo completo
+## Full Example
 
 ```typescript
 import { createApp } from 'vue';
@@ -77,11 +78,11 @@ const app = createApp(App);
 app.use(DebugPlugin, { eventName: 'debug' });
 app.mount('#app');
 
-// En cualquier parte:
+// Anywhere in your app:
 useDebug({ foo: 'bar' });
 ```
 
 ---
 
-## Licencia
+## License
 MIT
