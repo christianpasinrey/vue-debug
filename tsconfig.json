@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": ["node"],
+    "declaration": true,
+    "declarationDir": "dist",
+    "outDir": "dist"
+  },
+  "include": ["./**/*.ts", "./**/*.vue"],
+  "exclude": ["node_modules", "dist"]
+}

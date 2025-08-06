@@ -1,0 +1,36 @@
+{
+  "name": "@christianpasinrey/vue3-debug-data",
+  "version": "1.0.0",
+  "description": "Plugin de depuración visual para Vue 3.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --declaration --emitDeclarationOnly && tsc --outDir dist --project tsconfig.json",
+    "prepare": "npm run build",
+    "lint": "eslint . --ext .ts,.vue",
+    "publish": "npm publish"
+  },
+  "keywords": [
+    "vue3",
+    "debug",
+    "plugin",
+    "typescript"
+  ],
+  "author": "Christian Pasinrey",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/runtime-dom": "^3.5.18",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^7.0.6",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
