@@ -31,11 +31,6 @@ import DebugItem from './DebugItem.vue';
 const data = ref<any>(null);
 const path = ref<string | null>(null);
 
-const dataListener = (event: CustomEvent) => {
-  data.value = event.detail.data;
-  path.value = event.detail.path || null;
-};
-
 const isMainCollapsed = ref(false);
 const contentWrapper = ref<HTMLElement | null>(null);
 const contentInner = ref<HTMLElement | null>(null);
@@ -72,14 +67,15 @@ watch(isMainCollapsed, async (collapsed) => {
   setWrapperStyle(collapsed);
 });
 
-const listenData = () => {
-  window.addEventListener('debug', dataListener);
-};
-
-// Inicializar estilo al montar
+// Inicializar estilo y listener al montar
 import { onMounted } from 'vue';
 onMounted(() => {
   setWrapperStyle(isMainCollapsed.value);
+  window.addEventListener('debug', (event: Event) => {
+    const customEvent = event as CustomEvent;
+    data.value = customEvent.detail.data;
+    path.value = customEvent.detail.path || null;
+  });
 });
 </script>
 

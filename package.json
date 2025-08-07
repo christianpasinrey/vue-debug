@@ -1,9 +1,16 @@
 {
   "name": "@christianpasinrey/vue3-debug-data",
-  "version": "1.0.5",
+  "version": "1.0.10",
   "description": "Visual debugging plugin for Vue 3.",
-  "main": "dist/index.js",
+  "main": "dist/vue3-debug-data.umd.js",
+  "module": "dist/vue3-debug-data.es.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/vue3-debug-data.es.js",
+      "require": "./dist/vue3-debug-data.umd.js"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -12,7 +19,7 @@
     "url": "https://github.com/christianpasinrey/vue-debug.git"
   },
   "scripts": {
-    "build": "tsc --declaration --emitDeclarationOnly && tsc --outDir dist --project tsconfig.json",
+    "build": "vite build",
     "prepare": "npm run build",
     "lint": "eslint . --ext .ts,.vue",
     "publish": "npm publish"

@@ -93,12 +93,12 @@ const isExpandable = (value: any): boolean => {
           </template>
           <template v-else>
             <DebugItem
-              v-for="(value, key, index) in props.data"
+              v-for="(value, key, idx) in Object.entries(props.data)"
               :key="key"
               :data="value"
-              :path="key"
+              :path="String(key)"
               :level="props.level + 1"
-              :style="{ transitionDelay: (index * 20) + 'ms' }"
+              :style="{ transitionDelay: (idx * 20) + 'ms' }"
               class="debug-child-item transition-all duration-200 ease-out"
             />
           </template>
